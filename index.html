@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Тетрис</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="game-wrapper">
+        <div class="game-container">
+            <!-- Левая панель: информация -->
+            <div class="panel panel-left">
+                <div class="panel-section">
+                    <div class="stat-item">
+                        <span class="stat-label">СЧЁТ</span>
+                        <span class="stat-value" id="scoreDisplay">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">УРОВЕНЬ</span>
+                        <span class="stat-value" id="levelDisplay">1</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">ЛИНИИ</span>
+                        <span class="stat-value" id="linesDisplay">0</span>
+                    </div>
+                </div>
+                <div class="panel-section">
+                    <span class="stat-label" style="text-align:center;display:block;margin-bottom:6px;">СЛЕДУЮЩАЯ</span>
+                    <div class="preview-wrapper">
+                        <canvas id="previewCanvas" width="120" height="120"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Центр: игровое поле -->
+            <div class="board-wrapper">
+                <canvas id="gameCanvas" width="300" height="600"></canvas>
+                <div class="game-over-overlay" id="gameOverOverlay">
+                    <div class="game-over-box">
+                        <h2>ИГРА ОКОНЧЕНА</h2>
+                        <p>Счёт: <span id="finalScore">0</span></p>
+                        <button id="restartBtn">НОВАЯ ИГРА</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Правая панель: управление (мобильное) -->
+            <div class="panel panel-right">
+                <div class="controls">
+                    <button class="ctrl-btn" id="moveLeft" aria-label="Влево">◀</button>
+                    <button class="ctrl-btn" id="moveRight" aria-label="Вправо">▶</button>
+                    <button class="ctrl-btn" id="rotateBtn" aria-label="Повернуть">↻</button>
+                    <button class="ctrl-btn" id="hardDropBtn" aria-label="Сбросить">⬇⬇</button>
+                    <button class="ctrl-btn" id="softDropBtn" aria-label="Вниз">⬇</button>
+                </div>
+                <div class="panel-section desktop-only">
+                    <span class="stat-label" style="text-align:center;display:block;font-size:12px;opacity:0.6;">
+                        ↑ поворот &nbsp;·&nbsp; ↓ ускорение &nbsp;·&nbsp; пробел сброс
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
